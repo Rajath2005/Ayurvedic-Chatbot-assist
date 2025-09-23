@@ -2,39 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Ayurvedic Design System - Natural + Futuristic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Ayurvedic inspired */
+    --background: 35 20% 98%;
+    --foreground: 160 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 35 30% 96%;
+    --card-foreground: 160 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 30% 96%;
+    --popover-foreground: 160 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Sacred Green */
+    --primary: 140 50% 35%;
+    --primary-foreground: 35 20% 98%;
+    --primary-light: 140 45% 45%;
+    --primary-glow: 140 60% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Earth Tones */
+    --secondary: 35 35% 88%;
+    --secondary-foreground: 160 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Natural Neutrals */
+    --muted: 35 25% 92%;
+    --muted-foreground: 160 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Golden Highlights */
+    --accent: 45 85% 70%;
+    --accent-foreground: 160 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Ayurvedic Color Palette */
+    --herbal-green: 140 50% 35%;
+    --sage-green: 120 25% 55%;
+    --earth-brown: 25 35% 45%;
+    --sand-beige: 35 30% 85%;
+    --gold-highlight: 45 85% 70%;
+    --lotus-pink: 340 40% 75%;
+    --chakra-purple: 270 35% 65%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--herbal-green)), hsl(var(--sage-green)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--sand-beige)), hsl(var(--gold-highlight)));
+    --gradient-healing: linear-gradient(135deg, hsl(var(--lotus-pink)), hsl(var(--chakra-purple)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--earth-brown)), hsl(var(--sand-beige)));
+
+    /* Glass morphism */
+    --glass-bg: hsla(35, 30%, 96%, 0.85);
+    --glass-border: hsla(140, 50%, 35%, 0.2);
+
+    /* Shadows - Natural depth */
+    --shadow-natural: 0 4px 20px hsla(140, 50%, 35%, 0.15);
+    --shadow-floating: 0 8px 32px hsla(140, 50%, 35%, 0.25);
+    --shadow-glow: 0 0 30px hsla(45, 85%, 70%, 0.4);
+
+    /* Destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 35 20% 98%;
+
+    /* Borders and inputs */
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 140 50% 35%;
 
     --radius: 0.5rem;
 
@@ -56,33 +87,55 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Ayurvedic Theme - Night Forest */
+    --background: 160 25% 8%;
+    --foreground: 35 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 160 20% 12%;
+    --card-foreground: 35 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 160 20% 12%;
+    --popover-foreground: 35 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 140 60% 55%;
+    --primary-foreground: 160 25% 8%;
+    --primary-light: 140 55% 65%;
+    --primary-glow: 140 70% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 160 15% 20%;
+    --secondary-foreground: 35 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 160 10% 18%;
+    --muted-foreground: 35 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 80% 65%;
+    --accent-foreground: 160 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark Ayurvedic Colors */
+    --herbal-green: 140 60% 55%;
+    --sage-green: 120 35% 65%;
+    --earth-brown: 25 25% 25%;
+    --sand-beige: 35 20% 25%;
+    --gold-highlight: 45 80% 65%;
+    --lotus-pink: 340 50% 70%;
+    --chakra-purple: 270 45% 70%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--herbal-green)), hsl(var(--sage-green)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--earth-brown)), hsl(var(--gold-highlight)));
+    --gradient-healing: linear-gradient(135deg, hsl(var(--lotus-pink)), hsl(var(--chakra-purple)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--earth-brown)), hsl(var(--sand-beige)));
+
+    /* Dark glass morphism */
+    --glass-bg: hsla(160, 20%, 12%, 0.85);
+    --glass-border: hsla(140, 60%, 55%, 0.3);
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 35 20% 95%;
+
+    --border: 160 15% 20%;
+    --input: 160 15% 20%;
+    --ring: 140 60% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +154,118 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Ayurvedic Chatbot Specific Styles */
+  .chatbot-float-btn {
+    @apply fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-floating;
+    background: var(--gradient-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .chatbot-float-btn:hover {
+    @apply scale-110;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .chatbot-window {
+    @apply fixed bottom-6 right-6 w-96 h-[600px] rounded-2xl overflow-hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-floating);
+    backdrop-filter: blur(20px);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-healing {
+    background: var(--gradient-healing);
+  }
+
+  .glass-card {
+    @apply rounded-xl p-4;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+  }
+
+  .typing-dots {
+    @apply flex space-x-1 justify-center items-center py-2;
+  }
+
+  .typing-dot {
+    @apply w-2 h-2 rounded-full bg-primary;
+    animation: typing 1.4s infinite ease-in-out;
+  }
+
+  .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+  .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsla(45, 85%, 70%, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsla(45, 85%, 70%, 0.8);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

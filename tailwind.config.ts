@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +49,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Ayurvedic Color Palette
+        ayur: {
+          herbal: "hsl(var(--herbal-green))",
+          sage: "hsl(var(--sage-green))",
+          earth: "hsl(var(--earth-brown))",
+          sand: "hsl(var(--sand-beige))",
+          gold: "hsl(var(--gold-highlight))",
+          lotus: "hsl(var(--lotus-pink))",
+          chakra: "hsl(var(--chakra-purple))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +69,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-healing': 'var(--gradient-healing)',
+        'gradient-earth': 'var(--gradient-earth)',
+      },
+      boxShadow: {
+        'natural': 'var(--shadow-natural)',
+        'floating': 'var(--shadow-floating)',
+        'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +103,51 @@ export default {
             height: "0",
           },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px hsla(45, 85%, 70%, 0.4)'
+          },
+          '50%': { 
+            boxShadow: '0 0 40px hsla(45, 85%, 70%, 0.8)'
+          },
+        },
+        'slide-up': {
+          from: {
+            opacity: '0',
+            transform: 'translateY(100%)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        typing: {
+          '0%, 80%, 100%': {
+            transform: 'scale(0)',
+            opacity: '0.5',
+          },
+          '40%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 3s ease-in-out infinite",
+        'pulse-glow': "pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        'slide-up': "slide-up 0.3s ease-out",
+        'fade-in': "fade-in 0.5s ease-out",
+        typing: "typing 1.4s infinite ease-in-out",
       },
     },
   },

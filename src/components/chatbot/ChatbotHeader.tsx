@@ -20,12 +20,25 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({ onClose }) => {
       <div className="relative z-10 flex items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-            <img 
-              src={chatbotIcon} 
-              alt="Ayurvedic AI" 
-              className="w-8 h-8 object-contain animate-pulse"
-            />
+          <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-primary-foreground/20 to-primary-foreground/5 flex items-center justify-center shadow-lg border border-primary-foreground/30">
+            {/* Animated background ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-ayur-gold/30 to-primary-glow/30 animate-spin-slow opacity-60"></div>
+            
+            {/* Inner glow effect */}
+            <div className="absolute inset-1 rounded-full bg-primary-foreground/10 shadow-inner"></div>
+            
+            {/* Icon container with better effects */}
+            <div className="relative z-10 w-9 h-9 rounded-full bg-primary-foreground/15 flex items-center justify-center backdrop-blur-sm">
+              <img 
+                src={chatbotIcon} 
+                alt="Ayurvedic AI" 
+                className="w-7 h-7 object-contain filter drop-shadow-lg brightness-110 saturate-110 hover:scale-110 transition-all duration-300"
+              />
+            </div>
+            
+            {/* Floating particles */}
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-ayur-gold rounded-full animate-pulse opacity-80"></div>
+            <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-primary-glow rounded-full animate-pulse delay-300 opacity-70"></div>
           </div>
           <div>
             <h3 className="font-semibold text-lg">Ayurvedic AI Assistant</h3>

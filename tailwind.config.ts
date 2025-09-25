@@ -148,6 +148,7 @@ export default {
         'slide-up': "slide-up 0.3s ease-out",
         'fade-in': "fade-in 0.5s ease-out",
         typing: "typing 1.4s infinite ease-in-out",
+        'spin-slow': "spin 3s linear infinite",
       },
     },
   },

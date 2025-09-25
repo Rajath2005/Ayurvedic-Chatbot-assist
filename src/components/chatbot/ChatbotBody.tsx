@@ -31,6 +31,7 @@ const ChatbotBody: React.FC = () => {
   ]);
   const [queryCount, setQueryCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const quickOptions = [
     {
@@ -123,7 +124,20 @@ const ChatbotBody: React.FC = () => {
   };
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const scrollToBottom = () => {
+      // Find the ScrollArea viewport element
+      const scrollAreaViewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollAreaViewport) {
+        scrollAreaViewport.scrollTop = scrollAreaViewport.scrollHeight;
+      } else {
+        // Fallback to messagesEndRef
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    // Use setTimeout to ensure DOM is updated
+    const timer = setTimeout(scrollToBottom, 100);
+    return () => clearTimeout(timer);
   }, [messages]);
 
   const TypingIndicator = () => (
@@ -167,7 +181,7 @@ const ChatbotBody: React.FC = () => {
       </div>
 
       {/* Messages */}
-      <ScrollArea className="flex-1 p-4">
+      <ScrollArea ref={scrollAreaRef} className="flex-1 p-4">
         <div className="space-y-4">
           {messages.map((message, index) => (
             <div
